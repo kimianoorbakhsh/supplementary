@@ -1,0 +1,278 @@
+---
+layout: content
+colab: https://colab.research.google.com/github/kimianoorbakhsh/supplementary/blob/master/notebooks/3d_vision/index.ipynb
+---
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div style="direction:ltr;line-height:300%;">
+<font face="Arial" size="5">
+<div align="center">
+<p></p>
+<p></p>
+In the Name of God
+            <p></p>
+<br/>
+            Sharif University of Technology
+            <br/>
+Computer Engineering Department
+            <p></p>
+Artificial Intelligence Course
+            <br/>
+<br/>
+            MohammadHossein Rohban
+            <br>
+Fall 2021
+        </br></div>
+<hr/>
+<div align="center">
+3D Computer Vision
+        </div>
+<br/>
+<div align="center">
+Kimia Noorbakhsh
+        </div>
+<hr/>
+<style scoped="" type="text/css">
+        p{
+        border: 1px solid #a2a9b1;background-color: #f8f9fa;display: inline-block;
+        };
+        </style>
+<div>
+<h3>Table of Contents</h3>
+<ul style="margin-right: 0;">
+<li>
+<a href="#sec_intro">
+                        Introduction
+                    </a>
+</li>
+<li>
+<a href="#sec_1">
+                    3D Data Representation
+                    </a>
+</li>
+<li>
+<a href="#sec_2">
+                Deep Learning on Unsorted Sets (The rise of Pointnet)
+                    </a>
+</li>
+<li>
+<a href="#sec_3">
+                    3D Adversarial Attacks
+                    </a>
+</li>
+<li>
+<a href="#sec_4">
+                    Papers and Labs regarding 3D Computer vision
+                    </a>
+</li>
+</ul>
+</div>
+</font>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<br/>
+<div id="sec_intro" style="direction:ltr;line-height:300%;">
+<font face="Arial" size="5">
+<font color="#888888" size="6">
+Introduction
+        </font>
+<p></p>
+<hr/>
+<p style='box-sizing: border-box; color: rgb(34, 34, 34); font-family: "Roboto Regular", "Helvetica Neue", Helvetica, Arial; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'><span style="box-sizing: border-box;">With major recent developments in 3D sensors, large-scale 3D geometry datasets, and advances in deep 3D learning, 3D computer vision is playing an increasingly important role in many fields. This includes a varied range of cutting-edge applications spanning robotics, autonomous navigation and localization, 3D <span style="box-sizing: border-box;">scene reconstruction</span>, 3D <span style="box-sizing: border-box;">scene understanding</span>, 3D <span style="box-sizing: border-box;">tracking and surveillance</span>, <span style="box-sizing: border-box;">digital city modeling</span>, and virtual and <span style="box-sizing: border-box;">augmented reality</span>.</span></p>
+<p style='box-sizing: border-box; color: rgb(34, 34, 34); font-family: "Roboto Regular", "Helvetica Neue", Helvetica, Arial; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'><span style="box-sizing: border-box;">The goal of this Research Topic is to present high-quality research on 3D computer vision that addresses challenging problems in 3D data processing, proposes new developments for reliable 3D data acquisition, and advances the state of the art in 3D applications.</span></p>
+<p style='box-sizing: border-box; color: rgb(34, 34, 34); font-family: "Roboto Regular", "Helvetica Neue", Helvetica, Arial; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'>Some of the areas of focus are:</p>
+<ol style='box-sizing: border-box; color: rgb(34, 34, 34); font-family: "Roboto Regular", "Helvetica Neue", Helvetica, Arial; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'>
+<li style="box-sizing: border-box;">3D analysis and modeling (3D deep learning and 3D machine learning, 3D recognition, 3D Segmentation, 3D detection, 3D registration)</li>
+<li style="box-sizing: border-box;">3D acquisition (calibration, structure from motion and SLAM, computational photography, 3D reconstruction)</li>
+<li style="box-sizing: border-box;">3D applications (robotics, medical applications, sports applications, digital fabrication)</li>
+</ol>
+<p style='box-sizing: border-box; color: rgb(34, 34, 34); font-family: "Roboto Regular", "Helvetica Neue", Helvetica, Arial; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;'>In this notebook, we will focus on the first application.</p>
+</font></div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img height="400" src="/supplementary/assets/FIG/3D.jpeg" width="800"/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><p></p>
+<br/></p>
+<p><div id="sec_1" style="direction:ltr;line-height:300%;">
+<font face="Arial" size="5">
+<font color="#888888" size="6">
+3D Data Representation
+        </font>
+<p></p>
+<hr/></font></div></p>
+<ol>
+<li>3D Point Clouds</li>
+<li>3D Models</li>
+<li>3D Mesh</li>
+<li>Voxel-based models</li>
+<li>Parametric Model (CAD)</li>
+<li>Other representations</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Show a code to read the ModelNet40 dataset and visualize some of its samples.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># pointnet</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<br/>
+<div id="sec_2" style="direction:ltr;line-height:300%;">
+<font face="Arial" size="5">
+<font color="#888888" size="6">
+Deep Learning on Unsorted Sets (The rise of Pointnet)
+        </font>
+<p></p>
+<hr/>
+<p>From a data structure point of view, a point cloud is an unordered set of vectors. While most works in deep learning focus on regular input representations like sequences (in speech and language processing), images, and volumes (video or 3D data), not much work has been done in deep learning on point sets.</p>
+<p><strong><span style="font-size: 24px;">Pointnet Architecture:</span></strong></p>
+<p>Pointnet is a deep learning framework that directly consumes unordered point sets as inputs. A point cloud is represented as a set of 3D points ${P_i| i = 1, \dots, n}$, where each point $P_i$ is a vector of its ($x, y, z$) coordinate plus extra feature channels such as color, normal, etc. For simplicity and clarity, unless otherwise noted, we only use the ($x, y, z$) coordinate as our point’s channels.</p>
+<p>For the object classification task, the input point cloud is either directly sampled from a shape or pre-segmented from a scene point cloud. Our proposed deep network outputs $k$ scores for all the $k$ candidate classes. For semantic segmentation, the input can be a single object for part region segmentation or a sub-volume from a 3D scene for object region segmentation. Our model will output $n \times m$ scores for each of the n points and each of the $m$ semantic subcategories.</p>
+</font></div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img height="400" src="/supplementary/assets/FIG/pointnet.PNG" width="800"/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Show the code of pointnet archtecture and evaluate a pre-trained model on the ModelNet40 data.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Introduce other useful point cloud models and link to their papers.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<br/>
+<div id="sec_3" style="direction:ltr;line-height:300%;">
+<font face="Arial" size="5">
+<font color="#888888" size="6">
+3D Adversarial Attacks
+        </font>
+<p></p>
+<hr/>
+<p>Reference to the original 3D adversarial attack paper and introduce the procedure.</p>
+</font></div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img height="400" src="/supplementary/assets/FIG/adv.PNG" width="800"/></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><p></p>
+<br/></p>
+<p><div id="sec_4" style="direction:ltr;line-height:300%;">
+<font face="Arial" size="5">
+<font color="#888888" size="6">
+Papers and Labs regarding 3D Computer vision
+        </font>
+<p></p>
+<hr/></font></div></p>
+<p><p>List of papers:</p></p>
+<p><p><br/></p></p>
+<p><p>Labs and groups working on 3D Computer Vision:</p></p>
+<ol>
+<li><a href="http://ipl.ce.sharif.edu/" rel="noopener noreferrer" target="_blank">IPL Lab (Sharif)</a></li>
+<li><a href="https://vision.in.tum.de/research" rel="noopener noreferrer" target="_blank">TUM Computer Vision Group</a></li>
+<li><a href="https://vision.ee.ethz.ch/" rel="noopener noreferrer" target="_blank">ETH Computer Vision Lab</a></li>
+<li><a href="http://www.cs.cmu.edu/~abhinavg/affordances/" rel="noopener noreferrer" target="_blank">3D Scene Geometry</a></li>
+<li><a href="https://www.crcv.ucf.edu/" rel="noopener noreferrer" target="_blank">Center for Research in Computer Vision, University of Central Florida (UCF)</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><p></p>
+<br/></p>
+<div id="sec_refs" style="direction:ltr;line-height:300%;">
+<font face="Arial" size="5">
+<font color="#888888" size="6">
+References
+        </font>
+<hr/>
+<ul>
+<li>
+https://towardsdatascience.com/how-to-represent-3d-data-66a0f6376afb
+            </li>
+<li>
+Reference 2
+            </li>
+</ul>
+</font>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

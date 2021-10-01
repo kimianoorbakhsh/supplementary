@@ -202,11 +202,14 @@ notebooks:
       applied to speech recognition and introduce some useful automatic speech recognition
       (ASR) tools.</p>
     kind: Content
+  - notebook: notebooks/3d_vision
+    link: /supplementary/notebooks/3d_vision/
+    kind: Notebook
 further-readings:
   label: Further Readings
   background: /supplementary/assets/index/images/supplementary-header.jpg
   content: <p>TODO</p>
+kind: Index
 search:
   content: true
   links: false
-kind: Index
